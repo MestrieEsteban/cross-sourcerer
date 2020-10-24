@@ -1,25 +1,11 @@
-import React from "react"
-import { useQuery } from "@apollo/react-hooks"
+import React 			from "react"
+import { useQuery } 	from "@apollo/react-hooks"
 import "./App.css"
-import { GET_USER } from "./graphql/getUser";
+import { GET_USER } 	from "./graphql/getUser";
+import { UserInfo } 	from "./component/userInfo"
+import { UserStats } 	from "./component/userStats"
+import { UserRepos } 	from "./component/userRepos"
 
-
-
-const UserInfo = ({ user: { login, avatarUrl, bio } }) => (
-	<div className="Card">
-		<img alt="avatar" className="Card--avatar" src={avatarUrl} />
-		<h1 className="Card--name">{login}</h1>
-		<h4>{bio}</h4>
-	</div>
-)
-
-const UsterStats = ({ stats: { countCommit, countRepo, followers } }) => (
-	<div className="Card--stats">
-		<span>Commits : {countCommit}</span>
-		<span>Repos : {countRepo}</span>
-		<span>Followers : {followers}</span>
-	</div>
-)
 
 function App() {
 	const { loading, error, data } = useQuery(GET_USER)
@@ -31,20 +17,22 @@ function App() {
 	let stats = [];
 
 	if (data) {
-
-		data.user.repositories.nodes.forEach(element => {
+		let user = data.user
+		user.repositories.nodes.forEach(element => {
 			countRepo++;
 			countCommit += element.defaultBranchRef.target.history.totalCount;
 			stats['countCommit'] = countCommit;
 			stats['countRepo'] = countRepo;
 		});
 
-		stats['followers'] = data.user.followers.totalCount
+
+		stats['followers'] = user.followers.totalCount
 
 		return (
 			<main className="App">
-				<UserInfo key={data.user.id} user={data.user} />
-				<UsterStats key={data.user.id} stats={stats} />
+				<UserInfo key={data.user.id} user={user} />
+				<UserStats key={data.user.id} stats={stats} />
+				<UserRepos key={data.user.id} repos={user.repositories} />
 
 			</main>
 		)

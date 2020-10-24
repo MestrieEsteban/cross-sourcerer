@@ -13,28 +13,39 @@ export const GET_USER = gql`
     location
     avatarUrl
     repositories(first: 20, orderBy: {field: CREATED_AT, direction: DESC}) {
-      totalCount
+      	totalCount
         nodes {
-          name
-          description
-          url
-          createdAt
-          updatedAt 
-          languages(first: 20) {
-            nodes{
-				name
-				color
+        	name
+          	description
+          	url
+          	createdAt
+          	updatedAt 
+          	primaryLanguage {
+          	  name
+          	  color
+          	}   
+		  	languages(first: 20) {
+          	  nodes{
+					name
+					color
+				} 
+		  	}  
+		  	collaborators{
+				nodes{
+					name
+					login
+					avatarUrl
+				}
+			}   
+			defaultBranchRef {
+				target {
+				... on Commit {
+					history {
+					totalCount
+					}
+				}
+				}
 			}
-          }         
-          defaultBranchRef {
-            target {
-              ... on Commit {
-                history {
-                  totalCount
-                }
-              }
-            }
-          }
         }
     }
   }

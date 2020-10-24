@@ -10,9 +10,11 @@
     "apollo-boost": "^0.4.9",
     "chart.js": "^2.9.4",
     "graphql": "^15.3.0",
+    "materialize-css": "^1.0.0-rc.2",
     "react": "^17.0.1",
     "react-chartjs-2": "^2.10.0",
     "react-dom": "^17.0.1",
+    "react-materialize": "^3.9.3",
     "react-scripts": "3.4.4",
     "react-spinkit": "^3.0.0"
   },
