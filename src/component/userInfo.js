@@ -1,9 +1,12 @@
 import React from "react"
+import "../App.css"
 
-export const UserInfo = ({ user: { login, avatarUrl, bio } }) => (
+
+export const UserInfo = ({ user: { login, avatarUrl, bio, location } }) => (
 	<div className="Card">
 		<img alt="avatar" className="Card--avatar" src={avatarUrl} />
-		<h1 className="Card--name">{login}</h1>
-		<h4>{bio}</h4>
+		<h3 className="">{login}</h3>
+		<span>{bio}</span> <br/>
+		<span>{location}</span>
 	</div>
 )

@@ -2,7 +2,7 @@ import React from "react"
 import 'materialize-css';
 import { Collapsible, CollapsibleItem } from 'react-materialize';
 import "../App.css";
-
+import {UserReposInfos} from './userReposInfos';
 
 
 
@@ -10,7 +10,7 @@ export const UserRepos = ({ repos }) => (
 	<Collapsible accordion popout header="Repository" className="Card" style={{ maxWidth: 700 }}>
 
 		{repos.nodes.map(repo =>
-			<CollapsibleItem className="row"
+			<CollapsibleItem className="" style={{backgroundColor:"white"}}
 				expanded={false}
 				header={
 					<div style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
@@ -20,7 +20,8 @@ export const UserRepos = ({ repos }) => (
 					</div>
 				}
 			>
-				
+				<UserReposInfos repo={repo}></UserReposInfos>
+
 			</CollapsibleItem>
 
 		)}
