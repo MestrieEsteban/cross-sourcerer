@@ -30,6 +30,7 @@ export const UserLanguages = ({ langs: { JavaScript, TypeScript, CSS, HTML, PHP 
 							'#35014F'
 						],
 						data: [JavaScript, TypeScript, CSS, HTML, PHP]
+						
 					}
 				],
 			}}

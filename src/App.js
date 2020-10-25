@@ -37,7 +37,6 @@ function App() {
 				languages[name] += element.defaultBranchRef.target.history.totalCount
 			}
 		});
-		console.log(languages);
 		
 
 		
