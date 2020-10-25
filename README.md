@@ -1,5 +1,8 @@
 <p align="center">
-  <img alt="" src="./sourcerer.logo.png"">
+  <img alt="" src="https://i.ibb.co/Zm4DrV3/1.png">
+</p>
+<p align="center">
+  <img alt="" src="https://i.ibb.co/R35LHnq/2.png">
 </p>
 
 ## Hello, Sourcerer
