@@ -16,6 +16,7 @@ export const GET_USER = gql`
       	totalCount
         nodes {
         	name
+			isPrivate
           	description
           	url
           	createdAt
@@ -35,6 +36,7 @@ export const GET_USER = gql`
 					name
 					login
 					avatarUrl
+					url
 				}
 			}   
 			defaultBranchRef {

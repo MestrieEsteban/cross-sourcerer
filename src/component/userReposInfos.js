@@ -21,7 +21,10 @@ export const UserReposInfos = ({ repo }) => (
 		<span style={{ float: 'left', fontSize: "13px" }}>Collaborators</span>
 		<br />
 		{repo.collaborators.nodes.map(collab =>
-				<img style={{ color: "black"}} alt="avatar" className="Card--avatar" src={collab.avatarUrl} />
+				<a href={collab.url}>
+				<img style={{ color: "black"}} alt="avatar" className="Card--avatar2" src={collab.avatarUrl} />
+				</a>
+
 		)}
 		<br />
 	</div>
