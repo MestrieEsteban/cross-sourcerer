@@ -1,6 +1,8 @@
 import React from "react"
 import "../App.css"
-import { Pie, Doughnut } from 'react-chartjs-2';
+import { Pie } from 'react-chartjs-2';
+import 'chartjs-plugin-datalabels';
+
 
 
 
@@ -29,7 +31,7 @@ export const UserLanguages = ({ langs: { JavaScript, TypeScript, CSS, HTML, PHP 
 						],
 						data: [JavaScript, TypeScript, CSS, HTML, PHP]
 					}
-				]
+				],
 			}}
 			options={{
 				title: {
@@ -40,7 +42,13 @@ export const UserLanguages = ({ langs: { JavaScript, TypeScript, CSS, HTML, PHP 
 				legend: {
 					display: true,
 					position: 'right'
-				}
+				},
+				plugins: {
+					datalabels: {
+					   display: true,
+					   color: 'black'
+					}
+				 }
 			}}
 		/>
 	</div>

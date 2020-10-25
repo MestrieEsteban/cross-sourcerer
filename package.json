@@ -9,6 +9,7 @@
     "@testing-library/user-event": "^7.1.2",
     "apollo-boost": "^0.4.9",
     "chart.js": "^2.9.4",
+    "chartjs-plugin-datalabels": "^0.7.0",
     "graphql": "^15.3.0",
     "materialize-css": "^1.0.0-rc.2",
     "react": "^17.0.1",
